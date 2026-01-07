@@ -8,6 +8,7 @@
 </head>
 <body>
     <h2>Dashboard</h2>
+    <a href="#" onclick="logout()">Logout</a>
     <script>
         let user = sessionStorage.getItem("user");
         if (user.role.name === "ADMIN") {
@@ -19,6 +20,10 @@
             user = JSON.parse(user);
             document.write("<p>Welcome,"+user.fullName+"</p>");
             document.write("<p>Role; "+user.role.name+"</p>");
+        }
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = "login.jsp";
         }
     </script>
     <ul>
